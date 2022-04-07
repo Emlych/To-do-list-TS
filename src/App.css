@@ -1,38 +1,138 @@
-.App {
-  text-align: center;
+:root {
+  --primarycolor: #ffa0a0;
+  --secondarycolor: #ffccd2;
+  --darkprimary: #064663;
+  --darkbackground: #242d41;
+  /* Toggle switch colors */
+  --switchWidth: 62px;
+  --switchHeight: 31px;
+  --sliderRadius: 29px;
+  --disabledSwitch: #919191;
+  --disabledSlider: #d2d1d1;
+  --checkedSwitchRed: #f2f7fd;
+  --checkedSliderRed: #5c48d3;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* general */
+.container {
+  padding: 0 5vw;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.subcontainer {
+  width: 70vw;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: stretch;
+}
+.btn {
+  background-color: var(--primarycolor);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.app {
+  height: 100vh;
+}
+.dark {
+  background-color: var(--darkbackground);
+  color: white;
+}
+/* Header */
+.header {
+  border-bottom: var(--secondarycolor) 1px solid;
+  padding: 15px 0;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title {
+  display: flex;
+  align-items: center;
+}
+.header svg {
+  color: var(--primarycolor);
+  font-size: 24px;
+  margin-right: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Header -- toggle button */
+.toggle__button {
+  position: relative;
+}
+.switch {
+  width: var(--switchWidth);
+  height: var(--switchHeight);
+  border-radius: 15px;
+  background-color: var(--disabledSwitch);
+  border: none;
+  transition: all 0.5s ease;
+}
+.slider {
+  position: absolute;
+  left: 1px;
+  bottom: 1px;
+  background-color: var(--disabledSlider);
+  width: var(--sliderRadius);
+  height: var(--sliderRadius);
+  border-radius: 50%;
+  border: none;
+  box-shadow: 6px 6px 21px -5px rgba(0, 0, 0, 0.61);
+  transition: all 0.5s ease;
+}
+.toggle__button .fa-moon,
+.toggle__button .fa-sun {
+  font-size: 20px;
+  position: relative;
+  bottom: 0;
+  left: 4px;
+}
+.toggle__button .fa-moon {
+  color: var(--violet);
+}
+.toggle__button .fa-sun {
+  color: #fff;
+}
+.slider-light {
+  background-color: var(--checkedSliderRed);
+  transform: translateX(calc(var(--switchWidth) - var(--sliderRadius)));
+}
+.switch-light {
+  background-color: var(--checkedSwitchRed);
+}
+
+/* Main */
+.main {
+  margin-top: 5vh;
+}
+form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+input {
+  border: var(--secondarycolor) 1px solid;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 24px;
+}
+
+/* task list*/
+.tasklist {
+  min-height: 30px;
+  margin-top: 5vh;
+  font-size: 24px;
+  background-color: var(--secondarycolor);
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+.task__left input {
+  margin-right: 15px;
+}
+.task svg {
+  color: #fff;
 }

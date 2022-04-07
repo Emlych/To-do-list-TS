@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "outDir": "/dist",
+    "target": "esnext",
+    "module": "es6",
+    "jsx": "react-jsx",
+    "noEmitOnError": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "moduleResolution": "node"
+  },
+  "files": ["src/App.tsx"],
+  "include": ["src"]
+}
